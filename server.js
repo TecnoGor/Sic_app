@@ -12,7 +12,7 @@ app.use(express.json());
 // Configuración de la conexión a PostgreSQL
 const pool = new Pool({
   user: 'postgres',
-  host: '10.16.12.50',
+  host: 'localhost',
   database: 'db_ipostel_2025',
   password: '',
   port: 5432,
