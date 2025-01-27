@@ -3,7 +3,7 @@ const { Pool } = require('pg');
 const cors = require('cors');
 
 const app = express();
-const port = 5000;
+const port = 5001;
 
 // Middleware
 app.use(cors());
@@ -14,14 +14,14 @@ const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'db_ipostel_2025',
-  password: '',
+  password: 'postgres',
   port: 5432,
 });
 
 // Ruta para obtener los datos de la base de datos
 app.get('/api/data', async (req, res) => {
   try {
-    const { rows } = await pool.query('SELECT codper, cedper, nomper, apeper FROM sno_personal');
+    const { rows } = await pool.query('SELECT codper, cedper, nomper, apeper, carantper FROM sno_personal');
     res.json(rows);
   } catch (err) {
     console.error(err);

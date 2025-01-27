@@ -15,7 +15,7 @@ const DataTablePersonal = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/data');
+        const response = await axios.get('http://localhost:5001/api/data');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -87,6 +87,15 @@ const DataTablePersonal = () => {
           >
             Apellido
           </DataTable.Title>
+          <DataTable.Title
+            sortDirection={sortedColumn === 'carantper' ? sortDirection : null}
+            onPress={() => {
+              setSortedColumn('carantper');
+              setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+            }}
+          >
+            Cargo
+          </DataTable.Title>
         </DataTable.Header>
 
         {paginatedData.map((item) => (
@@ -94,6 +103,7 @@ const DataTablePersonal = () => {
             <DataTable.Cell>{item.cedper}</DataTable.Cell>
             <DataTable.Cell>{item.nomper}</DataTable.Cell>
             <DataTable.Cell>{item.apeper}</DataTable.Cell>
+            <DataTable.Cell>{item.carantper}</DataTable.Cell>
           </DataTable.Row>
         ))}
 

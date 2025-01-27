@@ -7,6 +7,8 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import HomeScreen from "./src/screens/HomeScreen";
 import SettingsScreen from "./src/screens/SettingsScreen";
 import StackScreen from "./src/screens/StackScreen";
+import PersonalScreen from "./src/screens/PersonalScreen";
+import CarnetDesignScreen from "./src/screens/CarnetsDesignScreen";
 import LoginScreen from "./src/screens/LoginScreen";
 import RegisterScreen from "./src/screens/RegisterScreen";
 
@@ -17,6 +19,7 @@ const drawer = createDrawerNavigator();
 function MyDrawer () {
 
     const { isAuthenticated } = React.useContext(AuthContext);
+    
 
     return(
     <drawer.Navigator
@@ -26,6 +29,8 @@ function MyDrawer () {
                 <drawer.Screen name="Home" component={HomeScreen} />
                 <drawer.Screen name="Stack" component={StackScreen} />
                 <drawer.Screen name="Settings" component={SettingsScreen} />
+                <drawer.Screen name="Personal" component={PersonalScreen} />
+                <drawer.Screen name="CarnetsDesign" component={CarnetDesignScreen} />
             </>
         ) : (
             <>
