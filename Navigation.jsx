@@ -9,6 +9,7 @@ import SettingsScreen from "./src/screens/SettingsScreen";
 import StackScreen from "./src/screens/StackScreen";
 import PersonalScreen from "./src/screens/PersonalScreen";
 import CarnetDesignScreen from "./src/screens/CarnetsDesignScreen";
+import UsersScreen from "./src/screens/UsersScreen";
 import LoginScreen from "./src/screens/LoginScreen";
 import RegisterScreen from "./src/screens/RegisterScreen";
 
@@ -31,6 +32,7 @@ function MyDrawer () {
                 <drawer.Screen name="Settings" component={SettingsScreen} />
                 <drawer.Screen name="Personal" component={PersonalScreen} />
                 <drawer.Screen name="CarnetsDesign" component={CarnetDesignScreen} />
+                <drawer.Screen name="Users" title='Usuarios' component={UsersScreen} />
             </>
         ) : (
             <>
