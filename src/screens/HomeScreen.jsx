@@ -1,9 +1,10 @@
-import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
-
-
+import React, { useContext } from "react";
+import { View, Text, Button, StyleSheet, Alert } from "react-native";
+import { AuthContext } from "../context/AuthContext";
 
 const HomeScreen = () => {
+
+    const { logout }= useContext(AuthContext);
 
     const styles = StyleSheet.create({
         container: {
@@ -22,16 +23,12 @@ const HomeScreen = () => {
             marginBottom: 20,
         },
     });
-    const handleLogout = () => {
-        // Aquí puedes limpiar el estado de autenticación si es necesario
-        navigation.navigate('Login'); // Redirige al usuario a la pantalla de inicio de sesión
-    };
 
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Bienvenido al Sistema</Text>
             <Text style={styles.subtitle}>Has iniciado sesión correctamente.</Text>
-            <Button title="Cerrar Sesión" onPress={handleLogout} />
+            <Button title="Cerrar Sesión" onPress={logout} />
         </View>
     );
 

@@ -32,7 +32,7 @@ function MyDrawer () {
                 <drawer.Screen name="Settings" component={SettingsScreen} />
                 <drawer.Screen name="Personal" component={PersonalScreen} />
                 <drawer.Screen name="CarnetsDesign" component={CarnetDesignScreen} />
-                <drawer.Screen name="Users" title='Usuarios' component={UsersScreen} />
+                <drawer.Screen name="Users" component={UsersScreen} />
             </>
         ) : (
             <>

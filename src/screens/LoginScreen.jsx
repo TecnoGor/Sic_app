@@ -14,8 +14,6 @@ const LoginScreen = ({ navigation }) => {
                 username,
                 password,
             });
-
-           
             if (response.data.token) {
                 login(response.data.token);
             }

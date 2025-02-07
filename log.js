@@ -63,6 +63,17 @@ app.post('/login', async (req, res) => {
     }
 });
 
+// Ruta para consultar los usuarios
+// app.post('/api/users', async (req, res) => {
+//     try {
+//         const { rows } = await pool.query('SELECT id, firstname, secondname, mail, phone, username, status, rol FROM users');
+//         res.json(rows);
+//     } catch (err) {
+//         console.error(err);
+//         res.status(501).send('Error al obtener los datos');
+//     }
+// });
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
