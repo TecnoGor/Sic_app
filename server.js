@@ -29,6 +29,22 @@ app.get('/api/data', async (req, res) => {
   }
 });
 
+app.get('/empleado/:ced', async (req, res) => {
+  const { ced } = req.params;
+
+  try {
+    const result = await pool.query('SELECT * FROM sno_personal WHERE cedper = $1', [ced]);
+    if (result.rows.length > 0) {
+      res.json(result.rows[0]);
+    } else {
+      res.status(404).send('Empleado no encontrado');
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error al consultar la base de datos.');
+  }
+});
+
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });

@@ -27,12 +27,12 @@ function MyDrawer () {
     >
         {isAuthenticated ? (
             <>
-                <drawer.Screen name="Home" component={HomeScreen} />
-                <drawer.Screen name="Stack" component={StackScreen} />
-                <drawer.Screen name="Settings" component={SettingsScreen} />
-                <drawer.Screen name="Personal" component={PersonalScreen} />
-                <drawer.Screen name="CarnetsDesign" component={CarnetDesignScreen} />
-                <drawer.Screen name="Users" component={UsersScreen} />
+                <drawer.Screen name="Home" component={HomeScreen} options={{ title: "Inicio" }} />
+                <drawer.Screen name="Stack" component={StackScreen} options={{ title: "Stack" }}  />
+                <drawer.Screen name="Settings" component={SettingsScreen} options={{ title: "Opciones" }}  />
+                <drawer.Screen name="Personal" component={PersonalScreen} options={{ title: "Personal Trabajador" }}  />
+                <drawer.Screen name="CarnetsDesign" component={CarnetDesignScreen} options={{ title: "Diseño de Carnet" }}  />
+                <drawer.Screen name="Users" component={UsersScreen} options={{ title: "Usuarios" }}  />
             </>
         ) : (
             <>
