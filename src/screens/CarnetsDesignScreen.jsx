@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     banderaMW: {
         marginTop: '-60px',
         marginLeft: '-40px',
+        height: '100px',
         width: '390px',
         position: 'absolute',
         resizeMode: 'stretch',
@@ -126,6 +127,7 @@ const CarnetDesignScreen = () => {
                             <Image style={styles.banderaMW} source={require('../../assets/carnetDesign/CARNET-03.png')} />
                         </View>
                         <View style={styles.centralCarnet}>
+                            <Image style={styles.gerenciaTarget} source={require('../../assets/carnetDesign/CARNET-06.png')} />
                             <Image style={styles.imageProfile} source={require('../../assets/John_doe.jpg')} />
                         </View>
                         {/* <View style={}> */}
