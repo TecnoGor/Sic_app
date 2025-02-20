@@ -33,7 +33,7 @@ app.get('/empleado/:ced', async (req, res) => {
   const { ced } = req.params;
 
   try {
-    const result = await pool.query('SELECT * FROM sno_personal WHERE cedper = $1', [ced]);
+    const result = await pool.query('SELECT a.cedper, a.nomper, a.apeper, a.carantper, b.denger FROM sno_personal a INNER JOIN srh_gerencia b ON a.codger = b.codger WHERE a.cedper = $1', [ced]);
     if (result.rows.length > 0) {
       res.json(result.rows[0]);
     } else {
